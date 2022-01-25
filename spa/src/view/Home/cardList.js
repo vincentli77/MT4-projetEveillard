@@ -1,3 +1,4 @@
+export const cardList = {
   "card": [
     {
       "name": "Cheese",
