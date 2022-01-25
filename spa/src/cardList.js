@@ -6,16 +6,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 100
     },
 
@@ -25,16 +25,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 80
    },
    {
@@ -43,16 +43,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 100
     },
     {
@@ -61,16 +61,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 15   
     },
    {
@@ -79,16 +79,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 20
     },
     {
@@ -97,16 +97,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 30   
     },
     {
@@ -115,16 +115,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 78
     },
     { 
@@ -133,16 +133,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 99   
     },
    {
@@ -151,16 +151,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 12
     },
     {
@@ -169,16 +169,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 0
    },
    {
@@ -187,16 +187,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 1
     },
     {
@@ -205,16 +205,16 @@ export const cardList = {
         "name" : "fr",
         "label" : "fromage"
       },
-      "translations" : {
-        0 : {
+      "translations" : [
+        {
           "name" : "en",
           "label": "cheese"
         },
-        1 : {
+        {
           "name" : "it",
           "label": "fromagi"
         }
-      },
+      ],
       "tablet": 98
     },
   ]

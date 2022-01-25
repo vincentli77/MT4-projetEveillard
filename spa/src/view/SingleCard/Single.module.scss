@@ -1,0 +1,21 @@
+@import '../../var.scss';
+
+
+.inputCross {
+  span {
+    width: 30px;
+    height: 2px;
+    display: block;
+    background-color: $blue-color;
+
+    &:nth-child(1) {
+      transform-origin: top left;
+      transform: translateY(-10px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+        transform-origin: bottom left;
+        transform: translateY(10px) rotate(-45deg);
+    }
+  }
+}

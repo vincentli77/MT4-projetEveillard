@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./storage/store";
 import * as serviceWorker from "./serviceWorker";
-import {Home} from "./view/Home/Home";
-import Counter from "./view/Counter";
+import { Home } from "./view/Home/Home";
+import { SingleCard} from "./view/SingleCard/SingleCard";
 import Error404 from "./view/Error404";
 import Header from "./view/Header/Header";
 import "./index.css";
@@ -17,7 +17,8 @@ ReactDOM.render(
         <Header/>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/counter" component={Counter} />
+          <Route exact path="/single_card/:id" component={SingleCard} />
+          <Route exact path="/single_card" component={SingleCard} />
           <Route component={Error404} />
         </Switch>
       </Router>

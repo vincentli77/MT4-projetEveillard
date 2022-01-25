@@ -2,17 +2,27 @@
 
 
 .card{
-    width: 167px;
+    min-width: 167px;
     height: 122px;
     background-color: $card-background-color;
     border-radius: 8px;
-    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    position: relative;
+    margin:50px;
+
+    span{
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 100%;
+        bottom: 5px;
+        right: 5px;
+    }
 }
+
 
 
 

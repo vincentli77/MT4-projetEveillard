@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import {cardList}  from "./cardList";
+import {cardList}  from "../../cardList";
 import Card from "../../component/Card";
 import styles from "./Home.module.scss";
+import { Link } from "react-router-dom";
 export interface Props { }
 
 export const Home = (props: Props) => {
 
-  console.log(cardList);
   
   return (
     <>  
@@ -14,7 +14,9 @@ export const Home = (props: Props) => {
         <div className={styles.home}>
             {
             cardList.card.map(function(card, i){
-              return <Card key={i} card={card}/>
+              return <div>        
+                        <Card key={i} card={card}/>
+                     </div>
             })
             }
         </div>
