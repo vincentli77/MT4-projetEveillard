@@ -4,17 +4,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./storage/store";
 import * as serviceWorker from "./serviceWorker";
-import Application from "./view/Application";
+import {Home} from "./view/Home/Home";
 import Counter from "./view/Counter";
 import Error404 from "./view/Error404";
+import Header from "./view/Header/Header";
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
+        <Header/>
         <Switch>
-          <Route exact path="/" component={Application} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/counter" component={Counter} />
           <Route component={Error404} />
         </Switch>

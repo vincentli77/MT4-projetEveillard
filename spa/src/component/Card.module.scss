@@ -1,0 +1,16 @@
+@import '../var.scss';
+
+
+.card{
+    width: 167px;
+    height: 122px;
+    background-color: $card-background-color;
+    border-radius: 5px;
+}
+
+
+// @media (min-width: 920px) {
+//    .card{
+       
+//    }
+// }
