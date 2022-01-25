@@ -5,8 +5,16 @@
     width: 167px;
     height: 122px;
     background-color: $card-background-color;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
+
+
 
 
 // @media (min-width: 920px) {
