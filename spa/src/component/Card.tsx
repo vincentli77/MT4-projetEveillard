@@ -8,28 +8,11 @@ type Props = {
     card?: any
 }
 
-enum WrongColor {
-    red = 255,
-    green = 0,
-    blue = 0
-}
 
-enum goodColor {
-    red = 0,
-    green = 255,
-    blue = 0 
-}
 
 const color = (ratio: number) => {
     console.log(ratio)
-    let rgbStockArrayRatio = 
-        [
-            (Math.floor(goodColor.red * (ratio/100) + WrongColor.red * (ratio/100))).toString(),
-            (Math.floor(goodColor.blue * (ratio/100) + WrongColor.blue * (ratio/100))).toString(),
-            (Math.floor(goodColor.green * (ratio/100) + WrongColor.green * (ratio/100))).toString()
-        ]
-
-    let finalColor = "rgb("+rgbStockArrayRatio.join(', ')+")"
+    let finalColor = "hsl("+ratio+", 100%, 50%"
     console.log(finalColor)
     return finalColor
 }
@@ -46,10 +29,3 @@ const Card = (props: Props) => {
 
 export default Card;
 
-
-// 200, 3, 40 // reussite
-
-// // 50 %
-// 110, 25, 44
-
-// 21, 54, 48 // nul
