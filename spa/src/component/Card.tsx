@@ -11,10 +11,20 @@ type Props = {
 
 
 const color = (ratio: number) => {
-    console.log(ratio)
-    let finalColor = "hsl("+ratio+", 100%, 50%"
-    console.log(finalColor)
-    return finalColor
+    enum userChoice {
+        firstColor = 0,
+        secondColor = 174 
+    }
+
+    let baseColor = 0
+    if(userChoice.firstColor >= userChoice.secondColor){
+        baseColor = userChoice.secondColor
+    } else{
+        baseColor = userChoice.firstColor
+    }
+
+    let finalColor =(Math.abs(userChoice.firstColor - userChoice.secondColor) * ratio/100) + baseColor
+    return "hsl("+ finalColor +", 100%, 50%"
 }
 
 const Card = (props: Props) => {
