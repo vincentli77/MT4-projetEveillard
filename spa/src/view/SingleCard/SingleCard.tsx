@@ -3,12 +3,13 @@
 import React from "react";
 import {cardList}  from "../../cardList";
 import { useParams } from "react-router-dom";
+import styles from "./Single.module.scss";
 
 interface RouteParams {
   id: any;
   slug: any
 }
-import styles from "./Single.module.scss";
+
 
 export interface Props {
   card?: any

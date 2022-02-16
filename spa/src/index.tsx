@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./storage/store";
 import * as serviceWorker from "./serviceWorker";
 import { Home } from "./view/Home/Home";
+import { TestCustom } from './view/testCustom/TestCustom'
 import { SingleCard} from "./view/SingleCard/SingleCard";
 import Error404 from "./view/Error404";
 import Header from "./view/Header/Header";
@@ -19,6 +20,7 @@ ReactDOM.render(
           <Route exact path="/" component={Home} />
           <Route exact path="/single_card/:id" component={SingleCard} />
           <Route exact path="/single_card" component={SingleCard} />
+          <Route exact path="/test_custom" component={TestCustom} />
           <Route component={Error404} />
         </Switch>
       </Router>
