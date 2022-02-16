@@ -20,7 +20,7 @@ const Header = (props: Props) => {
                             <Link to="/add-card">Ajouter une carte</Link>
                         </li>
                         <li>
-                            <Link to="/see-card">Voir Carte</Link>
+                            <Link to="/">Voir Carte</Link>
                         </li>
                         <li>
                             <Link to="/categories">Categories</Link>
