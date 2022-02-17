@@ -10,6 +10,7 @@ interface RouteParams {
   slug: any
 }
 
+
 export interface Props {
   card?: any
 }
