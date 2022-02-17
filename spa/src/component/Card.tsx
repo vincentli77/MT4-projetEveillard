@@ -13,7 +13,7 @@ type Props = {
 const color = (ratio: number) => {
     enum userChoice {
         firstColor = 0,
-        secondColor = 174 
+        secondColor = 100 
     }
 
     let baseColor = 0
