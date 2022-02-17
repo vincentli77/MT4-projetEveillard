@@ -17,7 +17,7 @@ const Header = (props: Props) => {
                 <nav>
                     <ul className={styles.navbar}>
                         <li>
-                            <Link to="/add-card">Ajouter une carte</Link>
+                            <Link to="/single_card">Ajouter une carte</Link>
                         </li>
                         <li>
                             <Link to="/">Voir Carte</Link>
