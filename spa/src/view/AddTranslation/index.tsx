@@ -1,16 +1,26 @@
 import React from 'react'
+import { Type } from 'typescript'
 import { dependencies } from '../..'
-import { translationApi, ProtoTranslation } from '../../domain'
+import { translationApi, ProtoTranslation, languagesArray, Language} from '../../domain'
 
 export default function Component(): React.ReactElement {
   const [nativeWord, setNativeWord] = React.useState('')
-
+  const [nativeLanguage, setNativeLanguage] = React.useState<Language | ''>('')
+  const [foreignLanguage, setForeignLanguage] = React.useState<Language | ''>('')
   const [foreignWord, setForeignWord] = React.useState('')
 
-  const canSubmit = nativeWord && foreignWord
+  const canSubmit = nativeWord && foreignWord && nativeLanguage !== '' && foreignLanguage !== ''
 
   function onNativeWordChange(event: React.SyntheticEvent<HTMLInputElement>): void {
     setNativeWord(event.currentTarget.value)
+  }
+
+  function onNativeLanguageChange(event: React.SyntheticEvent<HTMLSelectElement>): void {
+    setNativeLanguage(event.currentTarget.value as Language)
+  }
+
+  function onForeignLanguageChange(event: React.SyntheticEvent<HTMLSelectElement>): void {
+    setForeignLanguage(event.currentTarget.value as Language)
   }
 
   function onForeignWordChange(event: React.SyntheticEvent<HTMLInputElement>): void {
@@ -19,13 +29,13 @@ export default function Component(): React.ReactElement {
 
   async function submit(): Promise<void> {
     if (canSubmit) {
-      const protoTranslation: ProtoTranslation<'EN'> = {
+      const protoTranslation: ProtoTranslation<Language> = {
         native: {
-          language: 'EN',
+          language: nativeLanguage,
           value: nativeWord,
         },
         foreign: {
-          language: 'FR',
+          language: foreignLanguage,
           value: foreignWord,
         },
       }
@@ -37,8 +47,18 @@ export default function Component(): React.ReactElement {
     <table>
       <thead>
         <tr>
-          <th>English</th>
-          <th>French</th>
+          <th>
+            <select onChange={onNativeLanguageChange}>
+            {languagesArray.map(language => {
+              return <option value={language}>{language}</option>
+            })}
+            </select>
+          </th>
+          <th><select onChange={onForeignLanguageChange}>
+            {languagesArray.map(language => {
+              return <option value={language}>{language}</option>
+            })}
+            </select></th>
           <th></th>
         </tr>
       </thead>

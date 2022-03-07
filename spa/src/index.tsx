@@ -11,12 +11,12 @@ import './index.css'
 
 import createId from './dependencies/createId'
 import TranslationStorageACL from './dependencies/storage/TranslationStorageACL'
-import { Dependencies } from './domain'
+import { Dependencies, Language } from './domain'
 // import AllTranslations from './views/AllTranslations'
 
-export const dependencies: Dependencies<'EN'> = {
+export const dependencies: Dependencies<Language> = {
   createId: createId,
-  storage: new TranslationStorageACL<'EN'>(),
+  storage: new TranslationStorageACL<Language>(),
 }
 
 ReactDOM.render(

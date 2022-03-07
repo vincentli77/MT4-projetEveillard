@@ -19,7 +19,7 @@ export const Home = (props: Props) => {
     translationApi
       .getAllTranslationsForForeignLanguage(dependencies)('FR')
       .then((translations) => setTranslations(translations))
-  })
+  },[])
 
   return (
     <>
