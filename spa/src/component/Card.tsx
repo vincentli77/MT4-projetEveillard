@@ -31,8 +31,8 @@ const Card = (props: Props) => {
     <div className={styles.card}>
       <Link to={'/single_card/' + props.translation.id}>Ajouter une carte</Link>
       {/* { color(props.card.tablet) } */}
-      <p>{props.translation.native.value}</p>
-      <p>{props.translation.foreign.value}</p>
+      <p>{props.translation.native.language} : {props.translation.native.value}</p>
+      <p>{props.translation.foreign.language} : {props.translation.foreign.value}</p>
       {/* <span style={{ backgroundColor: color(props.card.tablet) }}></span> */}
     </div>
   )

@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
-import { Type } from 'typescript'
+import React from 'react'
 import { dependencies } from '../..'
 import { translationApi, ProtoTranslation, languagesArray, Language} from '../../domain'
 
-export default function Component(): React.ReactElement {
+export default function AddTranslation(): React.ReactElement {
   const [nativeWord, setNativeWord] = React.useState('')
   const [nativeLanguage, setNativeLanguage] = React.useState<Language>('EN')
   const [foreignLanguage, setForeignLanguage] = React.useState<Language>('EN')
@@ -17,10 +16,12 @@ export default function Component(): React.ReactElement {
 
   function onNativeLanguageChange(event: React.SyntheticEvent<HTMLSelectElement>): void {
     setNativeLanguage(event.currentTarget.value as Language)
+    console.log(event.currentTarget.value)
   }
 
   function onForeignLanguageChange(event: React.SyntheticEvent<HTMLSelectElement>): void {
     setForeignLanguage(event.currentTarget.value as Language)
+    console.log(event.currentTarget.value)
   }
 
   function onForeignWordChange(event: React.SyntheticEvent<HTMLInputElement>): void {
@@ -39,6 +40,7 @@ export default function Component(): React.ReactElement {
           value: foreignWord,
         },
       }
+      console.log(protoTranslation['native']['language'])
       await translationApi.addTranslation(dependencies)(protoTranslation)
     }
   }

@@ -34,6 +34,15 @@ const getAllTranslationsForForeignLanguage =
       );
     };
 
+    
+const getAllTranslationsForEveryForeignLanguage =
+<N extends Language>({ storage }: Dependencies<N>) =>
+  {
+    const allTranslations = storage.getAllTranslations();
+    return allTranslations
+  };
+
+
 export type ProtoTranslation<N extends Language> = Omit<Translation<N>, "id">
 
 const addTranslation =
@@ -48,5 +57,6 @@ const addTranslation =
 
 export const translationApi = {
   getAllTranslationsForForeignLanguage,
+  getAllTranslationsForEveryForeignLanguage,
   addTranslation
 }
