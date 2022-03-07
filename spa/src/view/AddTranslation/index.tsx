@@ -9,7 +9,7 @@ export default function Component(): React.ReactElement {
   const [foreignLanguage, setForeignLanguage] = React.useState<Language>('EN')
   const [foreignWord, setForeignWord] = React.useState('')
 
-  const canSubmit = nativeWord && foreignWord && nativeLanguage && foreignLanguage
+  const canSubmit = nativeWord && foreignWord && nativeLanguage && foreignLanguage && nativeLanguage !== foreignLanguage
 
   function onNativeWordChange(event: React.SyntheticEvent<HTMLInputElement>): void {
     setNativeWord(event.currentTarget.value)
@@ -42,8 +42,6 @@ export default function Component(): React.ReactElement {
       await translationApi.addTranslation(dependencies)(protoTranslation)
     }
   }
-
- 
 
   return (
     <table>
