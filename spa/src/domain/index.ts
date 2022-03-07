@@ -1,4 +1,5 @@
 export const languagesArray = ["EN", "FR", "IT"] as const;
+export const translatedLanguagesArray = ["EN", "FR", "IT"] as const;
 export type Language = typeof languagesArray[number];
 
 interface Word<L extends Language> {
