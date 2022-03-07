@@ -1,5 +1,5 @@
 import React from 'react';
-import { SketchPicker, CirclePicker } from 'react-color';
+import {CirclePicker} from 'react-color';
 import { useState } from 'react';
 import styles from "./ColorPicker.module.scss";
 

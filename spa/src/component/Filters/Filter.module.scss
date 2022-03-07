@@ -1,0 +1,22 @@
+.sorting{
+    background-color: aqua;
+    grid-area: sorting;
+}
+
+.language{
+    background-color: rgb(214, 111, 42);
+    grid-area: language;
+}
+
+.options{
+    background-color: rgb(34, 26, 145);
+    grid-area: options;
+}
+
+.filters_container{
+    display: grid;
+    grid-template-areas: 
+        "sorting options"
+        "language options";
+    grid-template-columns: 1fr 3fr;
+}
