@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Type } from 'typescript'
 import { dependencies } from '../..'
 import { translationApi, ProtoTranslation, languagesArray, Language} from '../../domain'
 
 export default function Component(): React.ReactElement {
   const [nativeWord, setNativeWord] = React.useState('')
-  const [nativeLanguage, setNativeLanguage] = React.useState<Language | ''>('')
-  const [foreignLanguage, setForeignLanguage] = React.useState<Language | ''>('')
+  const [nativeLanguage, setNativeLanguage] = React.useState<Language>('EN')
+  const [foreignLanguage, setForeignLanguage] = React.useState<Language>('EN')
   const [foreignWord, setForeignWord] = React.useState('')
 
-  const canSubmit = nativeWord && foreignWord && nativeLanguage !== '' && foreignLanguage !== ''
+  const canSubmit = nativeWord && foreignWord && nativeLanguage && foreignLanguage
 
   function onNativeWordChange(event: React.SyntheticEvent<HTMLInputElement>): void {
     setNativeWord(event.currentTarget.value)
@@ -43,6 +43,8 @@ export default function Component(): React.ReactElement {
     }
   }
 
+ 
+
   return (
     <table>
       <thead>
@@ -50,15 +52,16 @@ export default function Component(): React.ReactElement {
           <th>
             <select onChange={onNativeLanguageChange}>
             {languagesArray.map(language => {
-              return <option value={language}>{language}</option>
+              return <option value={language} key={language}>{language}</option>
             })}
             </select>
           </th>
           <th><select onChange={onForeignLanguageChange}>
             {languagesArray.map(language => {
-              return <option value={language}>{language}</option>
+              return <option value={language} key={language}>{language}</option>
             })}
-            </select></th>
+            </select>
+          </th>
           <th></th>
         </tr>
       </thead>
