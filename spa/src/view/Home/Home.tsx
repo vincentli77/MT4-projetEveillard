@@ -34,11 +34,6 @@ export const Home = (props: Props) => {
             )
           })}
         </div>
-
-        <section>
-          <h1>Add a new translation</h1>
-          <AddTranslation />
-        </section>
       </div>
     </>
   )
