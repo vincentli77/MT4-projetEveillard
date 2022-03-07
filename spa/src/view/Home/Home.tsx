@@ -6,14 +6,14 @@ import styles from './Home.module.scss'
 import { Link } from 'react-router-dom'
 
 import { dependencies } from '../..'
-import { translationApi, Translation } from '../../domain'
+import { translationApi, Translation, Language } from '../../domain'
 import AddTranslation from '../AddTranslation'
 // import TranslationItem from '../TranslationItem'
 
 export interface Props {}
 
 export const Home = (props: Props) => {
-  const [translations, setTranslations] = useState<Translation<'EN'>[]>([])
+  const [translations, setTranslations] = useState<Translation<Language>[]>([])
 
   useEffect(() => {
     translationApi

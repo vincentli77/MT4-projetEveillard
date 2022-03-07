@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import styles from "./Single.module.scss";
 
 import { dependencies } from '../..'
-import { translationApi, Translation } from '../../domain'
+import { translationApi, Translation, Language } from '../../domain'
 import AddTranslation from '../AddTranslation'
 
 interface RouteParams {
@@ -21,7 +21,7 @@ export interface Props {
 export const SingleCard = ( props: Props ) => {
 
   const params = useParams<RouteParams>();
-  const [translations, setTranslations] = useState<Translation<'EN'>[]>([])
+  const [translations, setTranslations] = useState<Translation<Language>[]>([])
 
   useEffect(() => {
     translationApi
