@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { Type } from 'typescript'
 import { dependencies } from '../..'
-import { translationApi, ProtoTranslation, languagesArray, Language} from '../../domain'
+import { translationApi, ProtoTranslation, languagesArray, Language, translatedLanguagesArray} from '../../domain'
+import { restrictAvailableLanguages } from '../../restrictAvailableLanguages'
 
 export default function Component(): React.ReactElement {
   const [nativeWord, setNativeWord] = React.useState('')
   const [nativeLanguage, setNativeLanguage] = React.useState<Language>('EN')
-  const [foreignLanguage, setForeignLanguage] = React.useState<Language>('EN')
+  const [foreignLanguage, setForeignLanguage] = React.useState<Language>('FR')
   const [foreignWord, setForeignWord] = React.useState('')
 
   const canSubmit = nativeWord && foreignWord && nativeLanguage && foreignLanguage && nativeLanguage !== foreignLanguage
@@ -48,14 +49,14 @@ export default function Component(): React.ReactElement {
       <thead>
         <tr>
           <th>
-            <select onChange={onNativeLanguageChange}>
-            {languagesArray.map(language => {
+            <select onChange={onNativeLanguageChange} key={foreignLanguage}>
+            {restrictAvailableLanguages(languagesArray, foreignLanguage).map(language => {
               return <option value={language} key={language}>{language}</option>
             })}
             </select>
           </th>
-          <th><select onChange={onForeignLanguageChange}>
-            {languagesArray.map(language => {
+          <th><select onChange={onForeignLanguageChange} key={nativeLanguage}>
+            {restrictAvailableLanguages(languagesArray, nativeLanguage).map(language => {
               return <option value={language} key={language}>{language}</option>
             })}
             </select>
