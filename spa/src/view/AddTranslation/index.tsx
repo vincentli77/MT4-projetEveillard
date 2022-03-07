@@ -1,10 +1,11 @@
 import React from 'react'
+import { Type } from 'typescript'
 import { dependencies } from '../..'
-import { translationApi, ProtoTranslation } from '../../domain'
+import { translationApi, ProtoTranslation, languagesArray, Language} from '../../domain'
 
 export default function Component(): React.ReactElement {
   const [nativeWord, setNativeWord] = React.useState('')
-
+  const [nativeLabel, setNativeLabel] = React.useState('')
   const [foreignWord, setForeignWord] = React.useState('')
 
   const canSubmit = nativeWord && foreignWord
@@ -13,19 +14,24 @@ export default function Component(): React.ReactElement {
     setNativeWord(event.currentTarget.value)
   }
 
+  function onNativeLabelChange(event: React.SyntheticEvent<HTMLSelectElement>): void {
+    setNativeLabel(event.currentTarget.value)
+    console.log(event.currentTarget.value)
+  }
+
   function onForeignWordChange(event: React.SyntheticEvent<HTMLInputElement>): void {
     setForeignWord(event.currentTarget.value)
   }
 
   async function submit(): Promise<void> {
     if (canSubmit) {
-      const protoTranslation: ProtoTranslation<'EN'> = {
+      const protoTranslation: ProtoTranslation<"EN"> = {
         native: {
-          language: 'EN',
+          language: nativeLabel as Language,
           value: nativeWord,
         },
         foreign: {
-          language: 'FR',
+          language: nativeLabel as Language,
           value: foreignWord,
         },
       }
@@ -37,7 +43,13 @@ export default function Component(): React.ReactElement {
     <table>
       <thead>
         <tr>
-          <th>English</th>
+          <th>
+            <select onChange={onNativeLabelChange}>
+            {languagesArray.map(language => {
+              return <option value={language}>{language}</option>
+            })}
+            </select>
+          </th>
           <th>French</th>
           <th></th>
         </tr>

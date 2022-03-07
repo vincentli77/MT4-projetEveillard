@@ -1,16 +1,16 @@
-export type Language = "EN" | "FR";
+export const languagesArray = ["EN", "FR", "IT"] as const;
+export type Language = typeof languagesArray[number];
 
 interface Word<L extends Language> {
   language: L;
   value: string;
 }
 
-type OtherLanguage<L extends Language> = Exclude<Language, L>;
 
 export interface Translation<N extends Language> {
   id: string;
   native: Word<N>;
-  foreign: Word<OtherLanguage<N>>;
+  foreign: Word<N>;
 }
 
 export type IdGenerator = () => string;
@@ -27,7 +27,7 @@ export interface Dependencies<N extends Language> {
 
 const getAllTranslationsForForeignLanguage =
   <N extends Language>({ storage }: Dependencies<N>) =>
-    async (language: OtherLanguage<N>): Promise<Translation<N>[]> => {
+    async (language: N): Promise<Translation<N>[]> => {
       const allTranslations = await storage.getAllTranslations();
       return allTranslations.filter(
         ({ foreign }) => foreign.language === language
